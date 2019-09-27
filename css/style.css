@@ -1,0 +1,19 @@
+#one{
+    color: blue;
+    background-color: aqua;
+    width: 200px;
+    height: 50px;
+    position: absolute;
+}
+
+#two{
+    color: red;
+    background-color: antiquewhite;
+    width: 300px;
+    height: 50px;
+    margin-left: 200px;
+}
+
+.three{
+    color: burlywood;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>DOM Basics</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody id="check">
+            <tr>
+                <td>1</td>
+                <td>Ola</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Uber</td>
+                <td>9</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Self</td>
+                <td>10</td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="one">One Text One Text One Text
+        One Text One Text One Text One Text One
+    </div>
+    <div id="two">
+        <b>Two Text</b>
+    </div>
+    <br>
+    <div class="three">Three Text 1</div>
+    <div class="three">Three Text 2</div>
+    Task: <input type="text" id="name">
+   
+    <button onclick="getNameValue()">Add</button>
+    <br>
+    <div id="namevalue">Name value will come here on click of add button!</div>
+
+    <script>
+        var nm = document.getElementById("name")
+        var nv = document.getElementById("namevalue")
+        function getNameValue(){
+            console.log(nm);
+            console.log(nm.value)
+            nv.innerText = nm.value
+            nm.value = ""
+            nm.focus()
+        }
+    </script>
+
+</body>
+
+</html>

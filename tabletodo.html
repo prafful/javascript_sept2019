@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+    <h1>Table ToDo</h1>
+    Task: <input type="text" >
+    <button onclick="addTask()">Add</button>
+    <br>
+    <br>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>S.no</th>
+                <th>Task</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="taskbody">
+            <tr>
+                <td>1</td>
+                <td>Plan the weekend</td>
+                <td><button>Done</button></td>
+            </tr>
+            <tr>
+                    <td>2</td>
+                    <td>Sleep early today!</td>
+                    <td><button>Done</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        var counter = 1
+        var taskrow = document.getElementById("taskbody")
+        function addTask(){
+            console.log("Add task clicked: "  + counter);
+            //create 3 new td's
+            var newtd1 = document.createElement("td")
+            var newtd2 = document.createElement("td")
+            var newtd3 = document.createElement("td")
+            //create new tr to hold 3 td's
+            var newtr = document.createElement("tr")
+            //add content inside new td's
+            newtd1.innerText = counter
+            newtd2.innerText = "Some task..."
+            newtd3.innerHTML = "<button>Done</button>"
+            //make all 3 td's the child of tr
+            newtr.appendChild(newtd1)
+            newtr.appendChild(newtd2)
+            newtr.appendChild(newtd3)
+            //make newtr the child of taskrow
+            taskrow.appendChild(newtr)
+            counter++
+        }
+    </script>
+    </body>
+</html>

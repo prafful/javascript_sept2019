@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <h1>DOM Basics</h1>
+    <h1 onmouseover="callh1function()">DOM Basics</h1>
     <table border="1">
         <thead>
             <tr>
@@ -34,6 +34,11 @@
                 <td>Self</td>
                 <td>10</td>
             </tr>
+            <tr> 
+                    <td>3</td>
+                    <td>Self</td>
+                    <td>10</td>
+                </tr>
         </tbody>
     </table>
     <div id="one">One Text One Text One Text
@@ -49,19 +54,57 @@
    
     <button onclick="getNameValue()">Add</button>
     <br>
-    <div id="namevalue">Name value will come here on click of add button!</div>
+    <div id="namevalue">
+        <b>
+            Name value will come here on click of add button!
+        </b>    
+    </div>
+    <div id="tasks">
+        <ol id="tt">
+            <li>
+                Plan the weekend
+                <button>Done</button>
+            </li>
+            <li>
+                Get the car washed!
+                <button>Done</button>
+            </li>
+            <li>
+                Sleep tight!
+                <button>Done</button>
+            </li>
+        </ol>
+    </div>
 
     <script>
         var nm = document.getElementById("name")
         var nv = document.getElementById("namevalue")
+        var temp = ""
+        var alltask = document.getElementById("tt")
         function getNameValue(){
-            console.log(nm);
+/*             console.log(nm);
             console.log(nm.value)
-            nv.innerText = nm.value
+            temp = temp + " " +  nm.value + "<br>"
+            nv.innerHTML = temp
+            nm.value = ""
+            nm.focus() */
+            //create new li element -> <li></li>
+            var newli = document.createElement("li")
+            //set inner text for the new li element
+            //<li>some text (comes from nm.value) </li>
+            newli.innerHTML = nm.value + "<button>Done</button>"
+            alltask.appendChild(newli)
             nm.value = ""
             nm.focus()
+
+        }
+
+
+        function callh1function(){
+            alert("hello!")
         }
     </script>
+    <script src="script/todo.js"></script>
 
 </body>
 

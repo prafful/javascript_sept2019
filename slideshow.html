@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Slide Show</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Slide Show</h1>
+    <img src="images/02.jpg" alt="" id="slide">
+    <script>
+    var counter = 1
+        var startshow = setInterval(slideShow, 2000)
+        var slideref = document.getElementById("slide")
+
+        function slideShow() {
+            var imagePath = "images/0"+counter+".jpg"
+            console.log(imagePath);
+            slideref.src = imagePath
+            counter++
+            if(counter === 5){
+                counter = 1
+            }
+        }
+
+        setTimeout( stopSlideShow, 24000)
+
+        function stopSlideShow(){
+            clearInterval(startshow)
+        }
+
+    </script>
+
+</body>
+
+</html>

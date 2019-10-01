@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sliding Effect</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .slide {
+            border: 1px solid red;
+            float: right; margin: 0px 0px 15px 15px;
+         
+        }
+   
+    </style>
+</head>
+
+<body>
+    <h1>Slide Show</h1>
+]
+    <ol>
+        <li class="slide">
+            <img src="images/01.jpg" alt="">
+        </li>
+        <li class="slide">
+            <img src="images/02.jpg" alt="">
+        </li>
+        <li class="slide">
+            <img src="images/03.jpg" alt="">
+        </li>
+        <li class="slide">
+            <img src="images/04.jpg" alt="">
+        </li>
+    </ol>
+
+
+
+    <script>
+        var slideref = document.getElementsByClassName("slide")
+        //setInterval(startSlideShow, 100)
+        var counter1 = 0
+        var loopcheck = true
+        function startSlideShow(){
+            for(i = 0; i<slideref.length; i++){
+                slideref[i].style.display = "none"
+            }
+            while(loopcheck){
+                if(counter1 < -400){
+                    loopcheck = false
+                }else{
+                    slideref[0].style.marginLeft = -counter1+"px"
+                    counter1 -=5
+                }
+            }
+            
+
+           console.log(slideref);
+           slideref[0].style.display = "inline"
+           slideref[0].style.marginLeft = -counter1+"px"
+           
+           //slideref[1].style.display = "inline"
+           //slideref[1].style.marginLeft = counter2 + "px"
+
+           counter1+=5
+           //counter2-=5
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

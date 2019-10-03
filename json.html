@@ -8,9 +8,15 @@
     </head>
     <body>
         <h1>JSON</h1>
+        <h3>Remote User</h3>
+        <div id="remote">
+            
+        </div>
     </body>
-   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
     <script>
+        var users = []
+
         //create JSON object.
         var tour = {
             "id":1,  //each key:valuepair is seperated by colon :
@@ -55,6 +61,22 @@
         console.log(tours.length);  
         console.log(tours[0].location);  
 
+        //using axios to access remote rest api
+        axios.get("https://jsonplaceholder.typicode.com/users")
+            .then(successFunction, failureFunction)
+
+         function successFunction(response){
+             console.log(response);
+             users = response.data
+             console.log(users);
+             var remoteref = document.getElementById("remote")
+            remoteref.innerText = "Name: " + users[0].name
+         }   
+
+         function failureFunction(err){
+             console.log("Error: " + err + " bad url");
+         }
+         console.log("Users: " + users);
          
 
     </script>

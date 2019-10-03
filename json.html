@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>JSON</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>JSON</h1>
+    </body>
+   
+    <script>
+        //create JSON object.
+        var tour = {
+            "id":1,  //each key:valuepair is seperated by colon :
+            "location":"ooty", //each two key:value pairs are seperated by comma ,
+            "days": 10,
+            "travel": "train",
+            "friends":["ola", "uber", "ridez"]
+        }
+
+
+        var tours = [
+            {
+                "id":1,
+                "location":"srilanka"
+            },
+            {
+                "id": 2,
+                "location":"bhutan"
+            },
+            {
+                "id":3,
+                "location":"africa"
+            }
+        ]
+
+
+
+
+        console.log(tour);
+        console.log(tour.friends);
+        tour.friends.push("mika")
+        console.log(tour);
+        console.log("hello + " + 8);
+        //cannot concatenate String and JSON
+        console.log("Tour Object: " + tour );
+        //stringify to concatenate
+        console.log("Tour Object: " + JSON.stringify(tour) );
+        console.log("Days of travel: " + tour.days);
+
+        //working with array of JSON obejcts
+        console.log(tours);
+        console.log(tours.length);  
+        console.log(tours[0].location);  
+
+         
+
+    </script>
+
+</html>

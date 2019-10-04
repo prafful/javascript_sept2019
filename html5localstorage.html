@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>HTML5 Local Storage</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>HTML5 Web Storage OR Local Storage</h1>
+        <div id="local">
+            data from local storage will come here!
+        </div>
+        <br>
+        <button onclick="changeData()">Click</button>
+        <button onclick="resetData()">Reset</button>
+        <button onclick="deleteData()">Delete</button>
+        <script>
+            var score = 0
+            var localref = document.getElementById("local")
+            function changeData(){
+                //console.log("hello");
+                //check if browser supports localstorage
+                if(localStorage){
+                    //do this if browser supports localstorage
+                    localStorage.setItem("name", "PD")
+                    localStorage.setItem("score", ++score)
+                }else{
+                    //do this if browser does not support localstorage
+                    localref.innerHTML = "<b> Your browser lacks support for localstorage </b>"
+                }
+                var lsname = localStorage.getItem("name")
+                var lsscore = localStorage.getItem("score")
+                localref.innerHTML = "<b>Name:</b>" + lsname + "<br>" + "<b>Score: </b>" + score + "<br>" 
+            }
+
+            function resetData(){
+                localStorage.setItem("name", "")
+                localStorage.setItem("score", 0)
+            }
+
+            function deleteData(){
+                localStorage.removeItem("name")
+                localStorage.removeItem("score")
+            }
+
+        </script>
+    </body>
+</html>

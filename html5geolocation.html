@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title><!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <title>HTML5 Geolocation</title>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link href="css/style.css" rel="stylesheet">
+            </head>
+            <body>
+                <h1>HTML5 Geolocation</h1>
+                <button onclick="yourPosition()">Get Current Position</button>
+                <div>
+                    <div id="latitude"></div>
+                    <div id="longitude"></div>
+                </div>
+                <script>
+                
+                    function yourPosition(){
+                     //use navigator object to retrive current position
+                     navigator.geolocation.getCurrentPosition(successFunction, failureFunction)
+                    }
+
+                    function successFunction(location){
+                        console.log("In location:");
+                        console.log(location);
+                        var lat = location.coords.latitude
+                        var lon = location.coords.longitude
+                        document.getElementById("latitude").innerText = "Latitide: " + lat
+                        document.getElementById("longitude").innerText = "Longitude: " + lon 
+                    }
+
+                    function failureFunction(error){
+                        console.log("In Error: ");
+                        console.log(error);
+                    }
+                
+                
+                </script>
+            </body>
+        </html>
